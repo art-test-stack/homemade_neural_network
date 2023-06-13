@@ -2,6 +2,7 @@ from tqdm import tqdm
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
+from utils import loss_function
 
 
 def loss_function(A, y):
