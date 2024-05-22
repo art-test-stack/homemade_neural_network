@@ -3,6 +3,8 @@ from neural_network.module.loss import *
 from neural_network.module.layer import Layer
 from neural_network.module.utils import GlobalConfig, LayersConfig, read_config, open_config
 
+from configs.settings import *
+
 import numpy as np
 from matplotlib import pyplot as plt
 
@@ -51,6 +53,9 @@ class Network:
         self.global_config = global_config
         self.layers_config = layers_config
 
+        self.last_act = type_function[self.type]
+        self.loss = loss[self.loss]
+
         self.grad_custom = False
 
         self.init_weights()
@@ -64,10 +69,10 @@ class Network:
         for layer in self.layers:
             h = layer.forward_pass(h)
 
-        return type_function[self.type](h)
+        return self.last_act(h)
     
     def backward_pass(self, y_train, y_pred):
-        dL = d_loss[self.loss](y_train, y_pred)
+        dL = self.loss.grad(y_train, y_pred)
         dy = softmax.grad(y_pred) if self.type == 'softmax' else 1
 
         J = np.einsum('ik,ikj->ij', dL, dy) if self.type == 'softmax' else dL
@@ -111,7 +116,7 @@ class Network:
         X_train, y_train, 
         X_val = [], y_val = [],
         X_test = [], y_test =[], 
-        epoch: int = 100, size_minibatch: float = 1,
+        epoch: int = EPOCHS, size_minibatch: float = 1,
         verbose = False):
         
         X_train = X_train.reshape(-1, self.input ** 2) if len(X_train.shape)==3 else X_train
@@ -139,12 +144,12 @@ class Network:
 
             if val:
                 ypred_val = self.forward_pass(X_val)
-                loss_val_ep = loss[self.loss](y_val, ypred_val) + self.regularization()
+                loss_val_ep = self.loss(y_val, ypred_val) + self.regularization()
                 loss_val.append(loss_val_ep)
                 acc_val.append(np.mean(np.argmax(y_val, axis=1) == np.argmax(ypred_val, axis=1)))
 
             y_pred = self.forward_pass(X_batch)
-            loss_train_ep = loss[self.loss](y_batch, y_pred) + self.regularization()
+            loss_train_ep = self.loss(y_batch, y_pred) + self.regularization()
 
             if verbose:
                 index_to_show = np.random.randint(0, len(X_batch) - 1)
@@ -152,8 +157,8 @@ class Network:
                 print("Network inputs:", X_batch[index_to_show])
                 print("Network outputs:", y_pred[index_to_show])
                 print("Target values:", y_batch[index_to_show])
-                print(f"Loss ({self.loss}) of the random element:", loss[self.loss](y_batch[index_to_show], y_pred[index_to_show]) + self.regularization())
-                print(f"Loss ({self.loss}) of the batch:", loss_train_ep)
+                print(f"Loss ({self.loss.name}) of the random element:", self.loss(y_batch[index_to_show], y_pred[index_to_show]) + self.regularization())
+                print(f"Loss ({self.loss.name}) of the batch:", loss_train_ep)
 
             self.backward_pass(y_batch, y_pred)
             self.update_weights()
@@ -178,7 +183,7 @@ class Network:
 
         if test:
             ypred_test = self.forward_pass(X_test)
-            print('Test loss:', loss[self.loss](y_test, ypred_test) + self.regularization())
+            print('Test loss:', self.loss(y_test, ypred_test) + self.regularization())
 
         
     def predict(self, X):

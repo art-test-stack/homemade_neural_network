@@ -1,14 +1,14 @@
 GLOBAL:
   loss: cross_entropy
   lrate: .1
-  wreg: 0.001
+  wreg: 0.
   wrt: L2
 
 LAYERS: 
   input: 28
   hidden_layers:
-    - size: 50
-      act: sigmoid
+    - size: 200
+      act: leaky_relu
       wr: glorot
     - size: 70
       act: relu

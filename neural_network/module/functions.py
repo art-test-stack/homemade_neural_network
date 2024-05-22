@@ -60,13 +60,13 @@ act_function = {
     'leaky_relu': leaky_relu,
 }
 
-d_act_function = {
-    'sigmoid': sigmoid.grad,
-    'tanh': tanh.grad,
-    'linear': linear.grad,
-    'relu': relu.grad,
-    'leaky_relu': leaky_relu.grad,
-}
+# d_act_function = {
+#     'sigmoid': sigmoid.grad,
+#     'tanh': tanh.grad,
+#     'linear': linear.grad,
+#     'relu': relu.grad,
+#     'leaky_relu': leaky_relu.grad,
+# }
 
 # ------------------OUPUT ACTIVATION FUNCTION------------------
 

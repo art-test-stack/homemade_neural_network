@@ -12,5 +12,5 @@ if __name__ == '__main__':
 
     model = Network(global_config, layers_config)
 
-    model.fit(X_train, y_train, X_val, y_val, X_test, y_test, epoch=5000)
+    model.fit(X_train, y_train, X_val, y_val, X_test, y_test)
     

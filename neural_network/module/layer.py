@@ -15,6 +15,7 @@ class Layer:
         self.wrt = wrt
         self.wreg = wreg
         self.weight_hist = []
+        self.act = act_function[self.act]
 
     def init_weights(self, size_input):
         if self.wr == 'glorot':
@@ -36,11 +37,11 @@ class Layer:
     def forward_pass(self, h_last):
         self.hlast = h_last.copy()
         x = h_last.dot(self.W) + self.b
-        self.h = act_function[self.act](x)
+        self.h = self.act(x)
         return self.h
 
     def backward_pass(self, J):
-        g = J * d_act_function[self.act](self.h)
+        g = J * self.act.grad(self.h)
         self.dw = (self.hlast).T.dot(g) / self.hlast.shape[0] + self.wreg * self.w_reg(self.W)
         self.db = np.mean(g, axis = 0) + self.wreg * self.w_reg(self.b)
         return g.dot(self.W.T)

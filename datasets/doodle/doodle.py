@@ -9,7 +9,7 @@ import numpy as np
 
 class Doodle(Dataset):
 
-    def __init__(self, address: str = None) -> None:
+    def __init__(self, address: str = DOODLE_ADDRESS) -> None:
         super().__init__(name="doodle", address=address)
 
 
@@ -17,7 +17,7 @@ class Doodle(Dataset):
                     dataset_size = DATASET_SIZE, image_size = DOODLE_IMAGE_SIZE, noise = DOODLE_NOISE, wr=[0.2,0.4],hr=[0.2,0.4],
                     flattening = False, centered = DOODLE_IS_CENTERED, image_types = dd._doodle_image_types_, show_images = False):
         
-        self._generate_dataset_folder_name(dataset_size, len(image_types), image_size)
+        self._generate_dataset_folder_name(dataset_size, len(image_types), image_size) 
         
         dataset = dd.gen_doodle_cases(count=dataset_size,rows=image_size,cols=image_size,imt=image_types, 
                     hr=hr,wr=wr, nbias=noise,cent=centered, show=False,

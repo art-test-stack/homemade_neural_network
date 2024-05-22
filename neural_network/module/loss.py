@@ -12,6 +12,7 @@ class LossModule(Module):
 class CrossEntropy(LossModule):
     def __init__(self, epsilon: float = 1e-15) -> None:
         super().__init__()
+        self.name = "cross-entropy"
         self.eps = epsilon
     
     def forward(self, y, y_pred):
@@ -21,9 +22,10 @@ class CrossEntropy(LossModule):
         return np.sum(y) / np.sum(y_pred) - 1 * (y / (y_pred + self.eps))
 
 
-class MeanSquareError(LossModule):
+class MeanSquaredError(LossModule):
     def __init__(self):
         super().__init__()
+        self.name = "mean-squared-error"
 
     def forward(self, y, y_pred):
         return 1 / y.shape[0] * np.sum((y - y_pred) ** 2 ) / 2
@@ -32,23 +34,23 @@ class MeanSquareError(LossModule):
         return (y - y_pred)
 
 
-class MSE(MeanSquareError):
+class MSE(MeanSquaredError):
     def __init__(self):
         super().__init__()
 
     
 cross_entropy = CrossEntropy()
-mse = MeanSquareError()
+mse = MeanSquaredError()
 
 loss = {
     'cross_entropy': cross_entropy,
     'mse': mse
 }
 
-d_loss = {
-    'cross_entropy': cross_entropy.grad,
-    'mse': mse.grad
-}
+# d_loss = {
+#     'cross_entropy': cross_entropy.grad,
+#     'mse': mse.grad
+# }
 
 # def d_ce_s(y, y_pred):
 #     return - (y - np.sum(y, axis=1, keepdims=True) * y_pred)

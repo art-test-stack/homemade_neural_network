@@ -21,23 +21,25 @@ class Dataset():
 
 
     def _generate_dataset_folder_name(self, size, nb_classes, n):
-        name_folder = f"{self.name}_{str(datetime.now().date())}_{size}_{nb_classes}_{n}"
+        name_folder = f"{self.name}_{str(datetime.now().date())}_{size}_{nb_classes}_{n}" if self.address is None else self.address
 
         path = DATA_FOLDER / name_folder
+
         if not path.exists():
             path.mkdir()
             self.address = name_folder
         
-        k = 1
-        folder = name_folder + f"_v{k}"
-        path = DATA_FOLDER / folder
-        while path.exists():
-            k += 1
+        else:
+            k = 1
             folder = name_folder + f"_v{k}"
             path = DATA_FOLDER / folder
-        
-        self.address = folder
-        path.mkdir()
+            while path.exists():
+                k += 1
+                folder = name_folder + f"_v{k}"
+                path = DATA_FOLDER / folder
+            
+            path.mkdir()
+            self.address = folder
 
     def _split_dataset(self, dataset):
         assert VAL_SET_PROP + TEST_SET_PROP < 100, "Proportions do not make 100%"
