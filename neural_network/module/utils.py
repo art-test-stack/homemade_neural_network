@@ -1,3 +1,5 @@
+from configs.settings import *
+
 import yaml
 from enum import Enum
 
@@ -56,13 +58,13 @@ class LayersConfig:
         for k, v in params.items():
             setattr(self, k, v)
 
-class DatasetConfig: 
-    def __init__(self, **params):
-        self.load = True
-        self.name = 'dataset_2024-02-13_750_9_50'
+# class DatasetConfig: 
+#     def __init__(self, **params):
+#         self.load = True
+#         self.name = 'dataset_2024-02-13_750_9_50'
 
-        for k, v in params.items():
-            setattr(self, k, v)
+#         for k, v in params.items():
+#             setattr(self, k, v)
 
 
 def read_config(file_path):
@@ -70,12 +72,12 @@ def read_config(file_path):
         config = yaml.safe_load(file)
     return config
 
-basic_config = read_config('configs/basic_config.yaml')
+basic_config = read_config(YAML_CONFIG)
 
-def open_config(file_path = 'configs/basic_config.yaml'):
+def open_config(file_path = YAML_CONFIG):
     config = read_config(file_path)
 
     global_config = GlobalConfig(**config['GLOBAL']) if 'GLOBAL' in config.keys() and config['GLOBAL'] is not None else GlobalConfig(**basic_config['GLOBAL'])
     layers_config = LayersConfig(**config['LAYERS']) if 'LAYERS' in config.keys() and config['LAYERS'] is not None else GlobalConfig(**basic_config['LAYERS'])
-    dataset_config = DatasetConfig(**config['DATASET']) if 'DATASET' in config.keys() and config['DATASET'] is not None else GlobalConfig(**basic_config['DATASET'])
-    return global_config, layers_config, dataset_config
+    # dataset_config = DatasetConfig(**config['DATASET']) if 'DATASET' in config.keys() and config['DATASET'] is not None else GlobalConfig(**basic_config['DATASET'])
+    return global_config, layers_config #, dataset_config

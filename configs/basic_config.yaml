@@ -5,7 +5,7 @@ GLOBAL:
   wrt: L2
 
 LAYERS: 
-  input: 20
+  input: 28
   hidden_layers:
     - size: 50
       act: sigmoid
@@ -16,7 +16,7 @@ LAYERS:
     - size: 30
       act: tanh
       wr: glorot
-    - size: 5
+    - size: 9
       act: relu
       wr: glorot
       br: (0 1)

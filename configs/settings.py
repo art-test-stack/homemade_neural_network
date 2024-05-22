@@ -1,9 +1,14 @@
 from pathlib import Path
 
+YAML_CONFIG = Path('configs/basic_config.yaml')
 
 DATA_FOLDER = Path('data/')
-DOODLE_SET_FOLDER = "doodle_2024-05-23_100_9_30"
 DATASET_SIZE = 100
+
+DOODLE_SET_FOLDER = "doodle_2024-05-23_100_9_30"
+DOODLE_IMAGE_SIZE = 28
+DOODLE_NOISE = .1
+DOODLE_IS_CENTERED = True
 
 VAL_SET_PROP = 20
 TEST_SET_PROP = 10

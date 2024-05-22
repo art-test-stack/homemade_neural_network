@@ -91,7 +91,6 @@ class Dataset():
 
 
     def _save_dataset(self):
-        print("address:",  self.address)
         folder_path = DATA_FOLDER / self.address
         
         X_train, Y_train, labels_train = self.train_set

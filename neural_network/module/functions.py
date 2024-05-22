@@ -1,10 +1,10 @@
-from module import Module
+from neural_network.module.module import Module
 import numpy as np
 
 
 class LeakyReLU(Module):
     def __init__(self, negative_slope: float | int = .2) -> None:
-        super.__init__()
+        super().__init__()
         self.negative_slope = negative_slope
 
     def forward(self, x):
@@ -21,12 +21,12 @@ class ReLU(LeakyReLU):
 
 class Linear(LeakyReLU):
     def __init__(self):
-        super.__init__(self, negative_slope = 1)
+        super().__init__(negative_slope = 1)
     
 
 class Sigmoid(Module):
     def __init__(self):
-        super.__init__()
+        super().__init__()
 
     def forward(self, x):
         return np.where(x<0, np.exp(x) / (1 + np.exp(x)), 1 / (1 + np.exp(-x)))
@@ -37,7 +37,8 @@ class Sigmoid(Module):
 
 class TanH(Module):
     def __init__(self):
-        super.__init__()
+        super().__init__()
+
 
     def forward(self, x):
         return (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x))
@@ -71,7 +72,8 @@ d_act_function = {
 
 class SoftMax(Module):
     def __init__(self) -> None:
-        super.__init__()
+        super().__init__()
+
 
     def forward(self, x):
         e_x = np.exp(x - np.max(x, axis=1, keepdims=True))

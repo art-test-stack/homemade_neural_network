@@ -1,9 +1,9 @@
-from module import Module
+from neural_network.module.module import Module
 import numpy as np
 
 class LossModule(Module):
     def __init__(self):
-        return super().__init__()
+        super().__init__()
     
     def __call__(self, y, y_pred):
         return self.forward(y, y_pred)
@@ -11,7 +11,7 @@ class LossModule(Module):
 
 class CrossEntropy(LossModule):
     def __init__(self, epsilon: float = 1e-15) -> None:
-        super.__init__()
+        super().__init__()
         self.eps = epsilon
     
     def forward(self, y, y_pred):
@@ -46,8 +46,8 @@ loss = {
 }
 
 d_loss = {
-    'cross_entropy': cross_entropy.grad(),
-    'mse': mse.grad()
+    'cross_entropy': cross_entropy.grad,
+    'mse': mse.grad
 }
 
 # def d_ce_s(y, y_pred):
