@@ -1,6 +1,6 @@
 import numpy as np
 from neural_network.module.utils import HiddenLayerConfig
-from functions import * 
+from neural_network.module.functions import * 
 
 class Layer:
 

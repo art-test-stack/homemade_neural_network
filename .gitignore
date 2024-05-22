@@ -1,6 +1,6 @@
-ignored_file/
-data/
-
+archives/
+/data/*
+!/data/README.md
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
