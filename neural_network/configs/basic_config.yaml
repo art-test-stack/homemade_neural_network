@@ -1,0 +1,27 @@
+GLOBAL:
+  loss: cross_entropy
+  lrate: .1
+  wreg: 0.001
+  wrt: L2
+
+LAYERS: 
+  input: 20
+  hidden_layers:
+    - size: 50
+      act: sigmoid
+      wr: glorot
+    - size: 70
+      act: relu
+      wr: glorot
+    - size: 30
+      act: tanh
+      wr: glorot
+    - size: 5
+      act: relu
+      wr: glorot
+      br: (0 1)
+  type: softmax
+
+DATASET: 
+  load: True
+  name: 'doodle_data'
