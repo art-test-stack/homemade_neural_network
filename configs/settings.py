@@ -3,7 +3,7 @@ from pathlib import Path
 YAML_CONFIG = Path('configs/basic_config.yaml')
 
 DATA_FOLDER = Path('data/')
-DATASET_SIZE = 1_000
+DATASET_SIZE = 10_000
 BATCH_SIZE = DATASET_SIZE
 
 DOODLE_ADDRESS = f"doodle_dataset_{DATASET_SIZE}"

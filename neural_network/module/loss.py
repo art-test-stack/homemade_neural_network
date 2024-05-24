@@ -46,11 +46,3 @@ loss = {
     'cross_entropy': cross_entropy,
     'mse': mse
 }
-
-# d_loss = {
-#     'cross_entropy': cross_entropy.grad,
-#     'mse': mse.grad
-# }
-
-# def d_ce_s(y, y_pred):
-#     return - (y - np.sum(y, axis=1, keepdims=True) * y_pred)

@@ -57,15 +57,7 @@ class LayersConfig:
     def __init__(self, **params):
         for k, v in params.items():
             setattr(self, k, v)
-
-# class DatasetConfig: 
-#     def __init__(self, **params):
-#         self.load = True
-#         self.name = 'dataset_2024-02-13_750_9_50'
-
-#         for k, v in params.items():
-#             setattr(self, k, v)
-
+            
 
 def read_config(file_path):
     with open(file_path, 'r') as file:
@@ -79,5 +71,4 @@ def open_config(file_path = YAML_CONFIG):
 
     global_config = GlobalConfig(**config['GLOBAL']) if 'GLOBAL' in config.keys() and config['GLOBAL'] is not None else GlobalConfig(**basic_config['GLOBAL'])
     layers_config = LayersConfig(**config['LAYERS']) if 'LAYERS' in config.keys() and config['LAYERS'] is not None else GlobalConfig(**basic_config['LAYERS'])
-    # dataset_config = DatasetConfig(**config['DATASET']) if 'DATASET' in config.keys() and config['DATASET'] is not None else GlobalConfig(**basic_config['DATASET'])
-    return global_config, layers_config #, dataset_config
+    return global_config, layers_config 

@@ -93,9 +93,8 @@ class SoftMax(Module):
 softmax = SoftMax()
 
 type_function = {
-    'softmax': softmax
+    'softmax': softmax,
+    None: Linear(),
+    'none': Linear()
 }
 
-d_type_function = {
-    'softmax': softmax.grad
-}
