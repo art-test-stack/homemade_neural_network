@@ -64,6 +64,39 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
+### Built With
+
+* [![Numpy][Numpy]][Numpy-url]
+* [![React][Matplotlib]][Matplotlib-url]
+* [![Sklearn][Sklearn]][Sklearn-url]
+* [![Tqdm][Tqdm]][Tqdm-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone git@github.com:art-test-stack/homemade_neural_network.git
+   ```
+2. Create a virtual environment
+    
+    For example I use [virtualenv](https://virtualenv.pypa.io/en/latest/):
+   ```sh
+   virtualenv -p python 3.10 venv
+   ```
+3. Install pip packages
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ### Create a dataset:
 
 Use MNIST or [doodle](datasets/doodle.py) dataset for image classification. 
@@ -103,45 +136,6 @@ Just run:
 python train.py
 ```
 
-### Built With
-
-* [![Numpy][Numpy]][Numpy-url]
-* [![React][Matplotlib]][Matplotlib-url]
-* [![Sklearn][Sklearn]][Sklearn-url]
-* [![Tqdm][Tqdm]][Tqdm-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone git@github.com:art-test-stack/homemade_neural_network.git
-   ```
-2. Create a virtual environment
-    
-    For example I use [virtualenv](https://virtualenv.pypa.io/en/latest/):
-   ```sh
-   virtualenv -p python 3.10 venv
-   ```
-3. Install pip packages
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 This framework permits to easily create a neural network without coding, and to train it on any data. So, anyone who want to create a neural network but don't know how to code can use it has a first step to see how neural nets work !
