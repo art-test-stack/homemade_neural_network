@@ -142,7 +142,7 @@ python train.py
 
 ## Usage
 
-This framework permits to easily create a neural network without coding, and to train it on any data. So, anyone who want to create a neural network but don't know how to code can use it has a first step to see how neural nets work !
+This framework permits to easily create a neural network without coding, and to train it on any data. So, anyone who want to create a neural network but don't know how to code can use it as a first step to see how neural nets work !
 
 However, I don't recommand it it's better to code lol.
 
