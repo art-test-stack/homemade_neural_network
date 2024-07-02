@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/art-test-stack/homemade_neural_network">
-    <img src="rsc/logo.jpg" alt="Logo" height="100">
+    <img src="rsc/logo.jpg" alt="Logo" height="200">
   </a>
 
 <h3 align="center">Homemade Neural Network</h3>
@@ -82,7 +82,7 @@ You have to specify the:
 - Global parameters:
     - ```loss```: the loss function of the model for training. It can be ```'cross_entropy'``` or ```'mse'```(for now).
     - ```lrate```: the learning rate for training. It has to be a ```float```.
-    - ```wrt```: the weight regularization type. It can be ```'L1'```, ```'L2'``` or ```None````
+    - ```wrt```: the weight regularization type. It can be ```'L1'```, ```'L2'``` or ```None```.
     - ```wreg```: the regularization weight. It has to be a ```float```.
 
 - Layers:
@@ -158,7 +158,7 @@ However, I don't recommand it it's better to code lol.
 - [ ] Change backpropagation call
 - [ ] Add reccurent and convolutional layers
 
-See the [open issues](https://github.com/art-test-stack/homemade_neural_network/issues) for a full list of proposed features (and known issues).
+<!-- See the [open issues](https://github.com/art-test-stack/homemade_neural_network/issues) for a full list of proposed features (and known issues). -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
