@@ -1,4 +1,4 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+<!-- Template source: See: https://github.com/othneildrew/Best-README-Template -->
 <a id="readme-top"></a>
 
 [![Stargazers][stars-shield]][stars-url]
@@ -10,7 +10,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/art-test-stack/homemade_neural_network">
-    <img src="rsc/logo.jpg" alt="Logo" height="200">
+    <img src="rsc/logo.jpg" alt="Logo" height="350">
   </a>
 
 <h3 align="center">Homemade Neural Network</h3>
@@ -21,10 +21,6 @@
     <a href="https://github.com/art-test-stack/homemade_neural_network"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <!-- <a href="https://github.com/art-test-stack/homemade_neural_network">View Demo</a>
-    ·
-    <a href="https://github.com/art-test-stack/homemade_neural_network/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    · -->
     <a href="https://github.com/art-test-stack/homemade_neural_network/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
@@ -38,14 +34,17 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#the-implementation">The implementation</a></li>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#create-a-dataset">Create a dataset</a></li>
+        <li><a href="#create-a-model">Create a model</a></li>
+        <li><a href="#train-the-model">Train the model</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -53,7 +52,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -62,7 +60,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+### The implementation
+
+This project easily implement from scratch any feedforward network that you wish to model, using the famous backpropagation algorithm, popularized by the article [Learning representations by back-propagating errors](https://doi.org/10.1038/323533a0) written by **David E.Rumelhart**, **Geoffrey E. Hinton** and **Ronald J. Williams** (1986), to learn from the training samples.
+
+The algorithm implemented is also well developed and explained in [Deep Learning](https://www.deeplearningbook.org/) by **Ian Goodfellow et al.** (2016): [Algorithm 6.4](https://www.deeplearningbook.org/contents/mlp.html#:~:text=NETWORKS-,Algorithm%206.4,-Backward).
+
+It can handles different layers of different sizes, activation functions, loss functions and weight regularization. All of this is detailed bellow in [Create a model](#create-a-model).
 
 ### Built With
 
@@ -71,7 +75,7 @@
 * [![Sklearn][Sklearn]][Sklearn-url]
 * [![Tqdm][Tqdm]][Tqdm-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 <!-- GETTING STARTED -->
@@ -94,7 +98,7 @@
    pip install -r requirements.txt
    ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 ### Create a dataset:
@@ -126,7 +130,7 @@ You have to specify the:
         - ```wr```: weight range for initialization. It can be a tuple of two ```float```between those the weights are uniformaly initialized or it can be ```'glorot'```for Xavier Glorot weight initialization.
         - ```br```: same than ```wr``` for the biases.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ### Train the model:
 
@@ -142,7 +146,7 @@ This framework permits to easily create a neural network without coding, and to 
 
 However, I don't recommand it it's better to code lol.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 <!-- ROADMAP -->
@@ -150,11 +154,12 @@ However, I don't recommand it it's better to code lol.
 
 - [ ] Change layers and module internal structure
 - [ ] Change backpropagation call
+- [ ] Add different optimizers than SGD
 - [ ] Add reccurent and convolutional layers
 
 <!-- See the [open issues](https://github.com/art-test-stack/homemade_neural_network/issues) for a full list of proposed features (and known issues). -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
@@ -172,7 +177,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
@@ -181,7 +186,7 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
@@ -193,17 +198,6 @@ Arthur Testard - testardarthur@gmail.com
 Project Link: [https://github.com/art-test-stack/homemade_neural_network](https://github.com/art-test-stack/homemade_neural_network)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS
-## Acknowledgments
-
-* []()
-* []()
-* []() 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 
 
