@@ -1,8 +1,10 @@
 class Module():
     def __init__(self) -> None:
-        pass
+        self.no_grad = False
+        self.last_x = None
     
     def __call__(self, x):
+        self.last_x = x if not self.no_grad else self.last_x
         return self.forward(x)
     
     def forward(self, x):
