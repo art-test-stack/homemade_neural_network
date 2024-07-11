@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class Module():
     def __init__(self) -> None:
         self.no_grad = False
@@ -12,3 +15,10 @@ class Module():
 
     def grad(self, x):
         NotImplementedError("Implement self grad method")
+
+    def backward(self, J):
+        g = J * self.grad(self.last_x)
+        if not self.no_grad:
+            self.dw = (self.last_x).T.dot(g) / self.last_x.shape[0] + self.wreg * self.w_reg(self.W)
+            self.db = np.mean(g, axis = 0) + self.wreg * self.w_reg(self.b)
+        return g
