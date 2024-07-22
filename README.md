@@ -215,7 +215,7 @@ Project Link: [https://github.com/art-test-stack/homemade_neural_network](https:
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/arthur-testard
 [product-screenshot]: images/screenshot.png
-[Numpy]: https://img.shields.io/badge/numpy-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Numpy]: https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white
 [Numpy-url]: https://numpy.org/
 [Sklearn]: https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white
 [Sklearn-url]: https://scikit-learn.org/stable/
